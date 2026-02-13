@@ -1,0 +1,11 @@
+[tools]
+java = "oracle-graalvm-25.0.1"
+
+[tasks.build]
+run = "./mvnw clean install"
+
+[tasks.build-native]
+run = "./mvnw native:compile -Pnative"
+
+[tasks.build-native-image]
+run = "./mvnw spring-boot:build-image -Pnative"
