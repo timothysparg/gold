@@ -11,8 +11,9 @@ A Spring Boot project.
 
 `mise` manages this project's development environment from `mise.toml`:
 
-- Tool versions (for example Java) are pinned and installed consistently.
+- Tool versions (for example Java and `hk`) are pinned and installed consistently.
 - Task commands are centralized so everyone uses the same build/test commands.
+- Git hook setup is automated when entering the project environment.
 
 ## Install and Set Up mise
 
@@ -24,6 +25,8 @@ A Spring Boot project.
 mise trust
 mise install
 ```
+
+When entering the environment, the `mise.toml` `enter` hook checks for the Git hook setup and runs `hk install --mise` automatically if it is missing.
 
 ## Build Tasks
 

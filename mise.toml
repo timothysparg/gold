@@ -1,11 +1,34 @@
 [tools]
+hk = "1.32.0"
 java = "oracle-graalvm-25.0.1"
+pkl = "0.30.2"
 
 [tasks.build]
+description = "Build and test the project with Maven"
 run = "./mvnw clean install"
 
-[tasks.build-native]
+[tasks."build:native"]
+description = "Compile a native executable using the Maven native profile"
 run = "./mvnw native:compile -Pnative"
 
-[tasks.build-native-image]
+[tasks."build:native-image"]
+description = "Build a native container image using Spring Boot buildpacks"
 run = "./mvnw spring-boot:build-image -Pnative"
+
+[tasks.check]
+description = "Run hk validation checks configured for the project"
+run = "hk check"
+
+[tasks.fix]
+description = "Apply hk automatic fixes configured for the project"
+run = "hk fix"
+
+[env]
+HK_MISE = true
+
+[hooks]
+enter = '''
+if ! grep -q "hk run" .git/hooks/pre-commit 2>/dev/null; then
+  hk install --mise
+fi
+'''
