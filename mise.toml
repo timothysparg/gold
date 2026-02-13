@@ -1,6 +1,7 @@
 [tools]
 hk = "1.32.0"
 java = "oracle-graalvm-25.0.1"
+"npm:dclint" = "3.1.0"
 pkl = "0.30.2"
 
 [tasks.build]
