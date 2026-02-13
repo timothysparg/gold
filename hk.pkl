@@ -17,6 +17,7 @@ local linters = new Mapping<String, Step> {
     fix = "dclint --fix {{files}}"
     batch = true
   }
+  ["markdown"] = Builtins.markdown_lint
   ["mise"] = Builtins.mise
   ["pkl"] = Builtins.pkl
   ["pkl_format"] = Builtins.pkl_format
