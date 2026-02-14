@@ -24,6 +24,7 @@ local linters = new Mapping<String, Step> {
   ["pkl"] = Builtins.pkl
   ["pkl_format"] = Builtins.pkl_format
   ["trailing-whitespace"] = Builtins.trailing_whitespace
+  ["yaml"] = Builtins.yamlfmt
 }
 
 hooks {
