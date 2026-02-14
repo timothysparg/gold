@@ -18,6 +18,13 @@ local linters = new Mapping<String, Step> {
     batch = true
   }
   ["markdown"] = Builtins.markdown_lint
+  ["google_java_format"] {
+    glob = List("**/*.java")
+    exclude = List("**/target/**")
+    check = "google-java-format --dry-run --set-exit-if-changed {{files}}"
+    fix = "google-java-format --replace {{files}}"
+    batch = true
+  }
   ["mise"] = Builtins.mise
   ["mixed_line_ending"] = Builtins.mixed_line_ending
   ["newlines"] = Builtins.newlines
