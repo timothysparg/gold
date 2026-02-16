@@ -2,6 +2,16 @@
 
 A Spring Boot project.
 
+## Quick Start
+
+```bash
+git clone <repo-url>
+cd gold
+mise trust
+mise install
+mise build
+```
+
 ## Prerequisites
 
 - [mise](https://mise.jdx.dev/) for toolchain and task execution
@@ -16,6 +26,26 @@ A Spring Boot project.
   consistently.
 - Task commands are centralized so everyone uses the same build/test commands.
 - Git hook setup is automated when entering the project environment.
+
+## Git Hooks and Linting with hk
+
+> [!NOTE]
+> `hk` manages this repository's Git hooks. With `mise` enabled, the
+> `mise.toml` `enter` hook automatically runs `hk install --mise` when hook
+> wiring is missing, keeping hooks in sync with `hk.pkl`.
+
+`hk` runs the same check set for `pre-commit`, `pre-push`, `hk check`, and
+`hk fix`:
+
+- Merge-conflict and large-file safety checks
+- Docker Compose linting via `dclint`
+- Markdown linting
+- Java formatting checks via `google-java-format`
+- `mise` configuration checks
+- Line ending/newline/trailing whitespace hygiene checks
+- Pkl validation and formatting checks
+- SQL linting via `sqlfluff`
+- YAML formatting via `yamlfmt`
 
 ## Install and Set Up mise
 
