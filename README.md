@@ -15,6 +15,8 @@ mise build
 ## Prerequisites
 
 - [mise](https://mise.jdx.dev/) for toolchain and task execution
+- [1Password CLI (`op`)](https://developer.1password.com/docs/cli/) for
+  secret retrieval used by `fnox`
 - [Docker](https://www.docker.com/) for container-based workflows
   (including image builds and Testcontainers)
 
@@ -26,6 +28,17 @@ mise build
   consistently.
 - Task commands are centralized so everyone uses the same build/test commands.
 - Git hook setup is automated when entering the project environment.
+
+## Secrets with fnox
+
+`fnox` is configured in `fnox.toml` and used with `mise` to load secret-backed
+environment variables into your shell.
+
+- `DB_USERNAME`
+- `DATABASE_PASSWORD`
+
+These values are consumed by `compose.yaml` for
+`POSTGRES_USER`/`POSTGRES_PASSWORD`.
 
 ## Git Hooks and Linting with hk
 

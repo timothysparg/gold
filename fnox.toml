@@ -1,0 +1,6 @@
+[providers]
+onepass = { type = "1password", vault = "DevNexus" }
+
+[secrets]
+DATABASE_PASSWORD = { provider = "onepass", value = "Database" }
+DB_USERNAME = { provider = "onepass", value = "Database/username" }
