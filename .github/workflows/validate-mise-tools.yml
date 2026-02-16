@@ -1,0 +1,43 @@
+name: Validate mise tools
+on:
+  push:
+    paths:
+      - 'mise.toml'
+      - '.github/workflows/validate-mise-tools.yml'
+  pull_request:
+    paths:
+      - 'mise.toml'
+      - '.github/workflows/validate-mise-tools.yml'
+  workflow_dispatch:
+jobs:
+  validate-tools:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup mise and install tools
+        uses: jdx/mise-action@v3
+        with:
+          install: true
+          cache: true
+      - name: Validate all local mise tools are installed
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          missing="$(mise ls --missing --local || true)"
+
+          if [ -n "${missing}" ]; then
+            echo "Missing local mise tools:"
+            echo "${missing}"
+            exit 1
+          fi
+
+          echo "All local mise tools are installed."
+          mise ls --local
