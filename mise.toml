@@ -8,9 +8,11 @@ node = "lts"
 "npm:markdownlint-cli" = "v0.47.0"
 "npm:dclint" = "3.1.0"
 uv = "0.10.2"
+pipx = "latest"
 "pipx:sqlfluff" = "4.0.4"
-actionlint = "latest"
+actionlint = "1.7.10"
 fnox = "1.12.1"
+shellcheck = "0.11.0"
 
 [tasks.build]
 description = "Build and test the project with Maven"

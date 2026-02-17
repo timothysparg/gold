@@ -12,6 +12,8 @@ mise install
 mise build
 ```
 
+![Quickstart Demo](docs/tapes/demo-quickstart.gif)
+
 ## Prerequisites
 
 - [mise](https://mise.jdx.dev/) for toolchain and task execution
