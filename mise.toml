@@ -13,6 +13,7 @@ pipx = "latest"
 actionlint = "1.7.10"
 fnox = "1.12.1"
 shellcheck = "0.11.0"
+bat = "latest"
 
 [tasks.build]
 description = "Build and test the project with Maven"

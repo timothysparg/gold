@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #MISE tools={ffmpeg="8.0.1", vhs="0.10.0"}
+#MISE description = "Render a VHS demo showing mise quickstart behavior"
 
 if ! command -v ttyd >/dev/null 2>&1; then
   echo "ttyd is required but not installed."

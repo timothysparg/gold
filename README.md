@@ -42,6 +42,8 @@ environment variables into your shell.
 These values are consumed by `compose.yaml` for
 `POSTGRES_USER`/`POSTGRES_PASSWORD`.
 
+![Quickstart Demo](docs/tapes/demo-fnox-secrets.gif)
+
 ## Git Hooks and Linting with hk
 
 > [!NOTE]
