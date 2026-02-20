@@ -37,6 +37,8 @@ run = "hk fix"
 [env]
 _.fnox-env = { tools = true }
 HK_MISE = true
+
+[settings]
 env_cache = true
 env_cache_ttl = "4h"
 experimental = true
