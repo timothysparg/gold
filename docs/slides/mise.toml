@@ -2,7 +2,14 @@
 node = "lts"
 vendir = "latest"
 
+[tasks.vendir-sync]
+description = "Sync vendored Reveal.js assets"
+sources = ["vendir.yml", "vendir.lock.yml"]
+outputs = ["reveal.js/"]
+run = "vendir sync"
+
 [tasks.dev]
 tools = { "npm:live-server" = "latest" }
 description = "Run Reveal.js slides with live reload"
+depends = ["vendir-sync"]
 run = "live-server . --port=8000 --open=index.html"
