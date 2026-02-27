@@ -1,0 +1,8 @@
+[tools]
+node = "lts"
+vendir = "latest"
+
+[tasks.dev]
+tools = { "npm:live-server" = "latest" }
+description = "Run Reveal.js slides with live reload"
+run = "live-server . --port=8000 --open=index.html"
