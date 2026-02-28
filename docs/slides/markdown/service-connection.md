@@ -22,7 +22,7 @@ To expand support for ActiveMQ and LDAP outcomes
 
 Testcontainers support with `ArtemisContainer`
 
-Docker Compose support with `apache/activemq-artemis` image 
+Docker Compose support with `apache/activemq-artemis` image
 
 ---
 

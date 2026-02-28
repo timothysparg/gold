@@ -104,7 +104,7 @@ curl -i http://localhost:8080/actuator/sbom
 Should return a json response with the list of SBOM ids
 
 ```json
-HTTP/1.1 200 
+HTTP/1.1 200
 Content-Type: application/vnd.spring-boot.actuator.v3+json
 Transfer-Encoding: chunked
 Date: Wed, 19 Jun 2024 16:02:05 GMT

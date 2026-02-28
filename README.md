@@ -2,6 +2,14 @@
 
 A Spring Boot project.
 
+## Prerequisites
+
+- [mise](https://mise.jdx.dev/) for toolchain and task execution
+- [1Password CLI (`op`)](https://developer.1password.com/docs/cli/) for
+  secret retrieval used by `fnox`
+- [Docker](https://www.docker.com/) for container-based workflows
+  (including image builds and Testcontainers)
+
 ## Quick Start
 
 ```bash
@@ -13,14 +21,6 @@ mise build
 ```
 
 ![Quickstart Demo](docs/tapes/demo-quickstart.gif)
-
-## Prerequisites
-
-- [mise](https://mise.jdx.dev/) for toolchain and task execution
-- [1Password CLI (`op`)](https://developer.1password.com/docs/cli/) for
-  secret retrieval used by `fnox`
-- [Docker](https://www.docker.com/) for container-based workflows
-  (including image builds and Testcontainers)
 
 ## Environment Management with mise
 

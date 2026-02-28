@@ -1,2 +1,2 @@
-## The Golden Path Starts at Home
+### The Golden Path Starts at Home
 #### Tim Sparg & DaShaun Carter

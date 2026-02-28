@@ -18,7 +18,7 @@ Expanded images supported out of the box
 
 ---
 
-Bitnami give developers 
+Bitnami give developers
 
 - SLSA level 3 compliant build provenance
 - SBOM metadata in multiple formats
@@ -51,8 +51,8 @@ curl -G https://start.spring.io/starter.tgz \
 
 `build.gradle` will contain additional dependencies
 
-- `spring-boot-docker-compose` 
-- `postgresql` 
+- `spring-boot-docker-compose`
+- `postgresql`
 
 ---
 
@@ -73,9 +73,9 @@ Spring boot docker compose will detect the `compose.yaml`
 
 ```log
 .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file '/workspaces/spring-boot-3-3/demos/bitnami/compose.yaml'
-o.s.boot.docker.compose.core.DockerCli   :  postgres Pulling 
+o.s.boot.docker.compose.core.DockerCli   :  postgres Pulling
 ...
-o.s.boot.docker.compose.core.DockerCli   :  postgres Pulled 
+o.s.boot.docker.compose.core.DockerCli   :  postgres Pulled
 o.s.boot.docker.compose.core.DockerCli   :  Network bitnami_default  Creating
 o.s.boot.docker.compose.core.DockerCli   :  Network bitnami_default  Created
 o.s.boot.docker.compose.core.DockerCli   :  Container bitnami-postgres-1  Creating
@@ -83,7 +83,7 @@ o.s.boot.docker.compose.core.DockerCli   :  Container bitnami-postgres-1  Creati
 
 ---
 
-Update `compose.yaml` to use the bitnami image 
+Update `compose.yaml` to use the bitnami image
 
 ```yaml
 services:

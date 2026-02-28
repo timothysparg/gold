@@ -18,7 +18,7 @@ local linters = new Mapping<String, Step> {
     batch = true
   }
   ["markdown"] = (Builtins.markdown_lint) {
-    exclude = List("docs/slides/**")
+    exclude = (Builtins.markdown_lint.exclude ?? List()) + List("docs/slides/**")
   }
   ["google_java_format"] {
     glob = List("**/*.java")
@@ -34,9 +34,11 @@ local linters = new Mapping<String, Step> {
   ["pkl_format"] = Builtins.pkl_format
   ["shellcheck"] = Builtins.shellcheck
   ["sql_fluff"] = Builtins.sql_fluff
-  ["trailing-whitespace"] = Builtins.trailing_whitespace
+  ["trailing-whitespace"] = (Builtins.trailing_whitespace) {
+    exclude = (Builtins.trailing_whitespace.exclude ?? List()) + List("**/*.svg")
+  }
   ["yaml"] = (Builtins.yamlfmt) {
-    exclude = List("**/*.lock.yml")
+    exclude = (Builtins.yamlfmt.exclude ?? List()) + List("**/*.lock.yml")
   }
 }
 
