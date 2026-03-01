@@ -32,7 +32,6 @@ local linters = new Mapping<String, Step> {
   ["newlines"] = (Builtins.newlines) {
     exclude = (Builtins.newlines.exclude ?? List()) + List("**/*.svg") // TODO log an issue with hk to exclude svgs?
   }
-  ["pkl"] = Builtins.pkl
   ["pkl_format"] = Builtins.pkl_format
   ["shellcheck"] = Builtins.shellcheck
   ["sql_fluff"] = Builtins.sql_fluff

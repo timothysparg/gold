@@ -13,5 +13,11 @@ directories:
       tags:
       - 5.2.1
     path: plugin
+  - git:
+      commitTitle: Add repository.url to package.json (#8)...
+      sha: bc9aa69db703694cdb6fdedff40466829df6903b
+      tags:
+      - 1.0.1
+    path: vendor/highlightjs-pkl
   path: reveal.js
 kind: LockConfig

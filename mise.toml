@@ -1,5 +1,5 @@
 [tools]
-hk = "1.32.0"
+hk = { version = "1.36", postinstall = "hk install --mise" }
 java = "oracle-graalvm-25.0.1"
 pkl = "0.30.2"
 yamlfmt = "0.21.0"
@@ -7,12 +7,12 @@ yamlfmt = "0.21.0"
 node = "lts"
 "npm:markdownlint-cli" = "v0.47.0"
 "npm:dclint" = "3.1.0"
-uv = "0.10.2"
-pipx = "latest"
 "pipx:sqlfluff" = "4.0.4"
 actionlint = "1.7.10"
 fnox = "1.12.1"
 shellcheck = "0.11.0"
+python = "3.14.3"
+pipx = "1.8.0"
 
 [tasks.build]
 description = "Build and test the project with Maven"

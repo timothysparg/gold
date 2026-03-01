@@ -8,7 +8,7 @@ I want the title to stay at the top of the page
     "Works on my machine"
   </blockquote>
   <figcaption style="font-size: 0.4em; font-style: italic;">— Every developer ever</figcaption>
-</figure> <!-- .element: class="fragment" -->
+</figure>
 
 
 Notes:
@@ -72,7 +72,7 @@ Notes:
 
 ---
 
-<div style="display:flex; gap:20px; justify-content:center;">
+<div style="display:flex; gap:1.25rem; justify-content:center;">
   <img src="images/jenv.png" width="25%">
   <img src="images/sdkman-pattern.svg" width="25%">
   <img src="images/backend-asdf.svg" width="25%">
@@ -195,7 +195,7 @@ Notes:
 ---
 <!-- .slide: data-auto-animate -->
 
-<div style="display:flex; gap:20px; justify-content:center;">
+<div style="display:flex; gap:1.25rem; justify-content:center;">
   <img src="images/jenv.png" width="25%">
   <img src="images/sdkman-pattern.svg" width="25%">
   <img src="images/backend-asdf.svg" width="25%">
@@ -307,7 +307,7 @@ Notes:
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.18);
     pointer-events: none;
     white-space: nowrap;
   }
@@ -413,8 +413,122 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 </code></pre>
 
 Notes:
-- ok, so we're building with github actions and because I'm 'me' I keep on making mistakes
-- and I only see these mistakes after I've pushed and had to twirl my fingers and wait for the new error
+
+---
+
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="11">
+## Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+
+## Prerequisites
+
+- Docker
+- Actionlint
+- hadolint
+- sqlfluff
+
+## Quick Start
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./mvnw spring-boot:run
+
+## Deep dive
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+</code></pre>
+
+Notes:
+
+------
+
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="11">
+## Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+
+## Prerequisites
+
+- Docker
+- Actionlint
+- hadolint
+- sqlfluff (python)
+
+## Quick Start
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./mvnw spring-boot:run
+
+## Deep dive
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+</code></pre>
+
+Notes:
+
+---
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="12">
+## Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+
+## Prerequisites
+
+- Docker
+- Actionlint
+- hadolint
+- sqlfluff (python)
+- markdownlint
+
+## Quick Start
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./mvnw spring-boot:run
+
+## Deep dive
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+</code></pre>
+
+Notes:
+
+---
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="12">
+## Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+
+## Prerequisites
+
+- Docker
+- Actionlint
+- hadolint
+- sqlfluff (python)
+- markdownlint (nodejs)
+
+## Quick Start
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./mvnw spring-boot:run
+
+## Deep dive
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+</code></pre>
+
+Notes:
 
 ---
 
@@ -442,5 +556,3 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 </code></pre>
 
 Notes:
-- ok, so we're building with github actions and because I'm 'me' I keep on making mistakes
-- and I only see these mistakes after I've pushed and had to twirl my fingers and wait for the new error

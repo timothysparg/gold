@@ -2,7 +2,7 @@
 
 Developers lives are getting more complicated by the day, and we all feel that increase in complexity.
 
-how can we manage that complexitY?<!-- .element: class="fragment" -->
+- how can we manage that complexity?<!-- .element: class="fragment" -->
 - can we make it easier to onboard new devs? <!-- .element: class="fragment" -->
 - is a convention even real if we don't enforce it? <!-- .element: class="fragment" -->
 - how close can we get to production on our laptops? <!-- .element: class="fragment" -->
@@ -24,11 +24,12 @@ Notes:
 
 ---
 
-Is this a silver bullet? <br/>
+Is this a silver bullet? <br/> <!-- .element: class="fragment semi-fade-out shrink" -->
 
 <figure>
   <blockquote>
     It's an opinionated approach to improve developer experience over time
+    </blockquote>
 </figure>
 <!-- .element: class="fragment" -->
 

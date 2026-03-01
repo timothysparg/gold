@@ -65,6 +65,51 @@
 						 data-background-position="top"
 						 data-background-image="images/bg.svg">
 				</section>
+				<section data-markdown="markdown/mise.md"
+						 data-separator="^]]]"
+						 data-separator-vertical="^---"
+						 data-separator-notes="^Notes:"
+						 data-charset="utf-8"
+						 data-background-size="100px"
+						 data-background-position="top"
+						 data-background-image="images/bg.svg">
+				</section>
+				<section data-markdown="markdown/hooks.md"
+						 data-separator="^]]]"
+						 data-separator-vertical="^---"
+						 data-separator-notes="^Notes:"
+						 data-charset="utf-8"
+						 data-background-size="100px"
+						 data-background-position="top"
+						 data-background-image="images/bg.svg">
+				</section>
+				<section data-markdown="markdown/secrets.md"
+						 data-separator="^]]]"
+						 data-separator-vertical="^---"
+						 data-separator-notes="^Notes:"
+						 data-charset="utf-8"
+						 data-background-size="100px"
+						 data-background-position="top"
+						 data-background-image="images/bg.svg">
+				</section>
+				<section data-markdown="markdown/production.md"
+						 data-separator="^]]]"
+						 data-separator-vertical="^---"
+						 data-separator-notes="^Notes:"
+						 data-charset="utf-8"
+						 data-background-size="100px"
+						 data-background-position="top"
+						 data-background-image="images/bg.svg">
+				</section>
+				<!-- <section data-markdown="markdown/not-all-roses.md"
+						 data-separator="^]]]"
+						 data-separator-vertical="^---"
+						 data-separator-notes="^Notes:"
+						 data-charset="utf-8"
+						 data-background-size="100px"
+						 data-background-position="top"
+						 data-background-image="images/bg.svg"> -->
+				</section>
 				<section data-markdown="markdown/thanks.md"
 						 data-separator="^]]]"
 						 data-separator-vertical="^---"
@@ -83,27 +128,74 @@
 		<script src="reveal.js/plugin/notes/notes.js"></script>
 
 		<script>
+			const revealHighlight = RevealHighlight();
+			window.hljs = revealHighlight.hljs;
+
+			function updateDayCounter() {
+				const startDateString = "2021-12-20";
+				const dayCounter = document.getElementById("the-number-of-days");
+				if (dayCounter) {
+					const startDate = new Date(startDateString);
+					const millisPerDay = 1000 * 60 * 60 * 24;
+					const elapsedDays = Math.ceil((Date.now() - startDate.getTime()) / millisPerDay);
+					dayCounter.textContent = String(elapsedDays);
+				}
+			}
+
+			function fitHooksCodeBlocks() {
+				document.querySelectorAll('section.hooks-code-slide.present pre').forEach((pre) => {
+					const slide = pre.closest('section.hooks-code-slide');
+					const code = pre.querySelector('code');
+					if (!slide || !code) return;
+
+					const slideBox = slide.parentElement;
+					if (!slideBox) return;
+
+					pre.style.fontSize = '';
+
+					let scale = 1;
+					const minScale = 0.3;
+					const fitsSlide = () => slide.scrollHeight <= slideBox.clientHeight;
+					const fitsWidth = () => code.scrollWidth <= code.clientWidth;
+
+					for (let i = 0; i < 32 && (!fitsWidth() || !fitsSlide()) && scale > minScale; i++) {
+						scale -= 0.025;
+						pre.style.fontSize = `${scale}em`;
+					}
+				});
+			}
+
+			function refreshSlideEnhancements() {
+				requestAnimationFrame(() => {
+					fitHooksCodeBlocks();
+					requestAnimationFrame(fitHooksCodeBlocks);
+				});
+				window.setTimeout(fitHooksCodeBlocks, 120);
+			}
+		</script>
+		<script src="reveal.js/vendor/highlightjs-pkl/pkl.min.js"></script>
+		<script>
+
 			Reveal.initialize({
 				controls: true,
 				progress: true,
 				history: true,
 				center: true,
 				hash: false,
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				pdfSeparateFragments: false,
+				showNotes: false,
+				pdfMaxPagesPerSlide: 1,
+				plugins: [ RevealMarkdown, revealHighlight, RevealNotes ]
 			});
-			Reveal.configure({ pdfSeparateFragments: false });
-			Reveal.configure({ showNotes: false });
-			Reveal.configure({ pdfMaxPagesPerSlide: 1 });
-		</script>
-		<script type="text/javascript">
-			const startDate = new Date("12/20/2021");
-			const today = new Date();
-			const Difference_In_Time = today.getTime() - startDate.getTime();
-			const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 
-			Reveal.addEventListener( 'ready', function() {
-				document.getElementById("the-number-of-days").innerHTML = '' + Math.ceil(Difference_In_Days);
-			}, false );
+			Reveal.on('ready', () => {
+				updateDayCounter();
+				refreshSlideEnhancements();
+			});
+			Reveal.on('slidechanged', refreshSlideEnhancements);
+			Reveal.on('fragmentshown', refreshSlideEnhancements);
+			Reveal.on('fragmenthidden', refreshSlideEnhancements);
+			window.addEventListener('resize', refreshSlideEnhancements);
 		</script>
 	</body>
 </html>

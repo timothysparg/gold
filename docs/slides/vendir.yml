@@ -15,3 +15,8 @@ directories:
           url: https://github.com/hakimel/reveal.js
           ref: 5.2.1
         newRootPath: plugin
+      - path: vendor/highlightjs-pkl
+        git:
+          url: https://github.com/apple/highlightjs-pkl
+          ref: 1.0.1
+        newRootPath: dist
