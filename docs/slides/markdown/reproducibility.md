@@ -75,7 +75,7 @@ Notes:
 <div style="display:flex; gap:20px; justify-content:center;">
   <img src="images/jenv.png" width="25%">
   <img src="images/sdkman-pattern.svg" width="25%">
-  <img src="images/asdf.png" width="25%">
+  <img src="images/backend-asdf.svg" width="25%">
   <img src="images/mise.svg" width="25%">
 </div>
 
@@ -140,7 +140,7 @@ Notes:
 <div style="display:flex; gap:20px; justify-content:center;">
   <img src="images/jenv.png" width="25%">
   <img src="images/sdkman-pattern.svg" width="25%">
-  <img src="images/asdf.png" width="25%">
+  <img src="images/backend-asdf.svg" width="25%">
   <img src="images/mise.svg" width="25%">
 </div>
 
@@ -151,14 +151,14 @@ Notes:
 ---
 <!-- .slide: data-auto-animate -->
 
-![mise](images/mise.svg)
+![mise](images/mise.svg)  
 mise.jdx.dev
 <!-- mise.jdx.dev this should be link coloured -->
 
 
 - mise is heavily influence by asdf <!-- .element: class="fragment fade-in-then-semi-out" -->
 - supply chain security <!-- .element: class="fragment fade-in-then-semi-out" -->
-- environment variables for different project directories <!-- .element: class="fragment fade-in-then-semi-out" -->
+- direnv functionality <!-- .element: class="fragment fade-in-then-semi-out" -->
 - task runner <!-- .element: class="fragment fade-in-then-semi-out" -->
 - performance <!-- .element: class="fragment fade-in-then-semi-out" -->
 - lockfiles <!-- .element: class="fragment fade-in-then-semi-out" -->
@@ -168,3 +168,162 @@ Notes:
 - asdf backend in mise is deprecated
 - all plugins are managed in mise-plugins repo which is tightly controlled
 - instead of calling shims on every command mise updates the path, and then changes it on directory change
+
+---
+<!-- .slide: class="backend-slide" -->
+
+<style>
+  .reveal .slides section.backend-slide {
+    height: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .reveal .slides section.backend-slide .backend-layout {
+    height: 100%;
+    gap: 0.35rem;
+  }
+
+  .reveal .slides section.backend-slide .backend-grid {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem 0.9rem;
+    align-items: stretch;
+  }
+
+  .reveal .slides section.backend-slide .backend-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    min-width: 0;
+    min-height: 0;
+    text-align: center;
+    font-size: 0.42em;
+    line-height: 1.15;
+  }
+
+  .reveal .slides section.backend-slide .backend-logo {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.28rem;
+  }
+
+  .reveal .slides section.backend-slide .backend-logo img {
+    max-width: 82%;
+    max-height: 82%;
+    width: auto;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .reveal .slides section.backend-slide h3 {
+    margin: 0 0 0.15em 0;
+    text-align: center;
+  }
+
+  .reveal .slides section.backend-slide .backend-badge {
+    position: absolute;
+    top: 0.95rem;
+    left: -1.15rem;
+    transform: rotate(-28deg);
+    padding: 0.36rem 1.35rem;
+    border-radius: 0.2rem;
+    font-size: 0.36em;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .reveal .slides section.backend-slide .backend-badge.deprecated {
+    background: #6b7280;
+  }
+
+  .reveal .slides section.backend-slide .backend-badge.experimental {
+    background: #4f46e5;
+  }
+</style>
+
+<div class="backend-layout r-vstack items-stretch justify-start">
+  <h3>Backends</h3>
+
+  <div class="backend-grid">
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-aqua.svg" alt="aqua"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo">
+        <img src="images/backend-asdf.svg" alt="asdf">
+        <div class="backend-badge deprecated">Deprecated</div>
+      </div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-cargo.png" alt="cargo crates"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo">
+        <img src="images/backend-conda-forge.png" alt="conda">
+        <div class="backend-badge experimental">Experimental</div>
+      </div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-dotnet.svg" alt="dotnet"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-forgejo.svg" alt="forgejo"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-gem.png" alt="gem"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-github.svg" alt="github"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-gitlab.svg" alt="gitlab"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-go.svg" alt="go"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-http.svg" alt="http"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-npm.svg" alt="npm"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-python.png" alt="uv / pipx"></div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo">
+        <img src="images/backend-swift.svg" alt="swift">
+        <div class="backend-badge experimental">Experimental</div>
+      </div>
+    </div>
+    <div class="backend-card">
+      <div class="backend-logo"><img src="images/backend-vfox.png" alt="vfox"></div>
+    </div>
+  </div>
+</div>
+
+Notes:
+- mise real super power is how much tooling it opens your project up to
+- it's goal is not to replace all of these package managers - its to give you and your project an accesible way of leveraging them

@@ -29,16 +29,23 @@ local linters = new Mapping<String, Step> {
   }
   ["mise"] = Builtins.mise
   ["mixed_line_ending"] = Builtins.mixed_line_ending
-  ["newlines"] = Builtins.newlines
+  ["newlines"] = (Builtins.newlines) {
+    exclude = (Builtins.newlines.exclude ?? List()) + List("**/*.svg") // TODO log an issue with hk to exclude svgs?
+  }
   ["pkl"] = Builtins.pkl
   ["pkl_format"] = Builtins.pkl_format
   ["shellcheck"] = Builtins.shellcheck
   ["sql_fluff"] = Builtins.sql_fluff
   ["trailing-whitespace"] = (Builtins.trailing_whitespace) {
-    exclude = (Builtins.trailing_whitespace.exclude ?? List()) + List("**/*.svg")
+    exclude =
+      (Builtins.trailing_whitespace.exclude ?? List()) //TODO log an issue with hk about this, it feels awkward
+        + List(
+          "**/*.svg", // I feel like we shouldn't really be concerned about SVGs, they're assets more than anything else
+          "**/*.md" // a trailing whitespace in md can be intentional for formatting purposes
+        )
   }
   ["yaml"] = (Builtins.yamlfmt) {
-    exclude = (Builtins.yamlfmt.exclude ?? List()) + List("**/*.lock.yml")
+    exclude = (Builtins.yamlfmt.exclude ?? List()) + List("**/*.lock.yml") //TODO log an issue with hk about this - lock files are mostly generated
   }
 }
 
