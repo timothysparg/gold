@@ -83,9 +83,38 @@ Notes:
 
 Notes:
 - but for the most part we're actually ok - we don't need to install java or our build tools
+
 ---
 
-```markdown[8]
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="8-10">
+## Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+
+## Prerequisites
+
+- Java
+- Maven
+- Docker
+
+## Quick Start
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./mvnw spring-boot:run
+
+## Deep dive
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="8">
 ## Introduction
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -103,11 +132,42 @@ cd spring-petclinic
 ## Deep dive
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
-```
+</code></pre>
 
 ---
 
-```markdown[9|10]
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="9">
+## Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+
+## Prerequisites
+
+- Docker
+- Actionlint
+
+## Quick Start
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./mvnw spring-boot:run
+
+## Deep dive
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+</code></pre>
+
+Notes:
+- ok, so we're building with github actions and because I'm 'me' I keep on making mistakes
+- and I only see these mistakes after I've pushed and had to twirl my fingers and wait for the new error
+
+---
+
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="9-10">
 ## Introduction
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -127,11 +187,9 @@ cd spring-petclinic
 ## Deep dive
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
-```
+</code></pre>
 
 Notes:
-- ok, so we're building with github actions and because I'm 'me' I keep on making mistakes
-- and I only see these mistakes after I've pushed and had to twirl my fingers and wait for the new error
 - friends don't let friends build dockerfiles, but if you do ... please lint them
 
 ---
@@ -327,3 +385,62 @@ Notes:
 Notes:
 - mise real super power is how much tooling it opens your project up to
 - it's goal is not to replace all of these package managers - its to give you and your project an accesible way of leveraging them
+
+---
+
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="9-10">
+## Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+
+## Prerequisites
+
+- Docker
+- Actionlint
+- hadolint
+
+## Quick Start
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./mvnw spring-boot:run
+
+## Deep dive
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+</code></pre>
+
+Notes:
+- ok, so we're building with github actions and because I'm 'me' I keep on making mistakes
+- and I only see these mistakes after I've pushed and had to twirl my fingers and wait for the new error
+
+---
+
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
+
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="9">
+## Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+
+## Prerequisites
+
+- Docker
+- mise
+
+## Quick Start
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./mvnw spring-boot:run
+
+## Deep dive
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
+</code></pre>
+
+Notes:
+- ok, so we're building with github actions and because I'm 'me' I keep on making mistakes
+- and I only see these mistakes after I've pushed and had to twirl my fingers and wait for the new error
