@@ -91,6 +91,19 @@
   .reveal .slides section.hooks-code-slide pre code {
     max-height: none;
   }
+
+  .reveal .slides section.hooks-code-slide .hooks-callout {
+    margin: 0.8rem auto 0;
+    width: 95%;
+    padding: 0.75rem 0.95rem;
+    border-left: 0.28rem solid #60a5fa;
+    background: rgba(96, 165, 250, 0.14);
+    color: #172554;
+    border-radius: 0.45rem;
+    font-size: 0.62em;
+    text-align: left;
+    box-sizing: border-box;
+  }
 </style>
 
 <h2 data-id="hooks-title">Git hooks</h2>
@@ -154,7 +167,7 @@ Notes:
 ---
 <!-- .slide: class="hooks-code-slide" data-auto-animate data-auto-animate-id="hk-pre-hook" data-auto-animate-unmatched="false" -->
 
-<pre data-id="hk-config"><code class="language-pkl" data-trim data-line-numbers="1-20|1-2|5-10|11-19">
+<pre data-id="hk-config"><code class="language-pkl" data-trim data-line-numbers="1-20|1-2|4-19|5-10|11-19">
 local linters = new Mapping&lt;String, Step&gt; {
 }
 
@@ -176,6 +189,22 @@ hooks {
     }
 }
 </code></pre>
+
+<div class="hooks-callout" data-line-callout="1-20">
+  The whole file is just two parts: define reusable steps, then wire them into named hooks.
+</div>
+<div class="hooks-callout" data-line-callout="1-2" hidden>
+  Start by defining a mapping of linter steps that can be reused across hooks.
+</div>
+<div class="hooks-callout" data-line-callout="4-19" hidden>
+  The <code>hooks</code> block maps reusable steps onto both git hooks and direct <code>hk</code> commands.
+</div>
+<div class="hooks-callout" data-line-callout="5-10" hidden>
+  Here <code>pre-commit</code> is configured to run those steps, with fixes enabled and git stash handling.
+</div>
+<div class="hooks-callout" data-line-callout="11-19" hidden>
+  These named commands let you run the same checks directly with <code>hk fix</code> and <code>hk check</code>.
+</div>
 
 Notes:
 - this is the anatomy of hk config file, it's written in the Apple pkl config language
@@ -207,6 +236,10 @@ hooks {
     }
 }
 </code></pre>
+
+<div class="hooks-callout" data-line-callout="6">
+  If <code>pre-commit</code> feels too intrusive, the same checks can be moved to <code>pre-push</code> so local commits stay fast.
+</div>
 
 Notes:
 - I know some people get frustrated by the pre-commit, especially if you've got WIP
@@ -252,6 +285,19 @@ hooks {
 }
 </code></pre>
 
+<div class="hooks-callout" data-line-callout="2">
+  <code>hk</code> ships with useful built-ins, like merge-conflict detection, so you do not have to define everything from scratch.
+</div>
+<div class="hooks-callout" data-line-callout="3-4" hidden>
+  Standard tools like <code>sqlfluff</code> and <code>hadolint</code> can be pulled in directly as reusable steps.
+</div>
+<div class="hooks-callout" data-line-callout="5-7" hidden>
+  Built-ins are still configurable, here <code>yamlfmt</code> is tweaked to ignore lockfiles.
+</div>
+<div class="hooks-callout" data-line-callout="8-13" hidden>
+  And when a builtin is not enough, you can define a custom step.
+</div>
+
 Notes:
 - hk has some nice checks built into hk itself, 
 - it's also got a pretty good standard set of configs for linters available
@@ -282,6 +328,16 @@ run = "hk fix"
 [env]
 HK_MISE = true
 </code></pre>
+
+<div class="hooks-callout" data-line-callout="1-7">
+  <code>mise</code> installs the entire toolchain for this workflow, not just <code>hk</code> itself.
+</div>
+<div class="hooks-callout" data-line-callout="2" hidden>
+  The <code>postinstall</code> hook lets <code>hk</code> register its git hooks as part of tool setup.
+</div>
+<div class="hooks-callout" data-line-callout="9-15" hidden>
+  These tasks can make <code>mise</code> the central place to register and discover project commands, not just hook-related ones.
+</div>
 
 Notes:
 - this is where we start seeing the benefit of the ecosystem

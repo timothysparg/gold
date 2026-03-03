@@ -176,13 +176,20 @@
 				const codes = Array.from(currentSlide.querySelectorAll('code[data-line-numbers]'));
 				const activeCode =
 					codes.find((code) => code.classList.contains('current-fragment')) ||
-					codes.find((code) => !code.classList.contains('fragment')) ||
+					codes.filter((code) => !code.classList.contains('fragment') || code.classList.contains('visible')).at(-1) ||
 					null;
 
 				const activeLineStep = normalizeLineStep(activeCode?.getAttribute('data-line-numbers'));
 
 				currentSlide.querySelectorAll('[data-line-callout]').forEach((target) => {
-					target.hidden = normalizeLineStep(target.dataset.lineCallout) !== activeLineStep;
+					const matchesLineStep = normalizeLineStep(target.dataset.lineCallout) === activeLineStep;
+					const matchesFragmentState =
+						!target.classList.contains('fragment') ? true :
+						target.classList.contains('current-visible') ?
+							target.classList.contains('current-fragment') :
+							target.classList.contains('visible') || target.classList.contains('current-fragment');
+
+					target.hidden = !matchesLineStep || !matchesFragmentState;
 				});
 			}
 

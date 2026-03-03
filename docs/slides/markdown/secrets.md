@@ -32,8 +32,12 @@
     min-height: 3.15em;
   }
 
-  .reveal .slides .secret-callout-stack .secret-info,
-  .reveal .slides .secret-callout-stack .secret-warning {
+  .reveal .slides .secret-callout-stack [data-line-callout] {
+    margin-top: 0;
+  }
+
+  .reveal .slides .secret-callout-stack .secret-info.fragment,
+  .reveal .slides .secret-callout-stack .secret-warning.fragment {
     position: absolute;
     inset: 0;
     margin-top: 0;
@@ -235,6 +239,13 @@ None of this really gets us closer to production secret handling on our laptops 
 
 ### `fnox`
 
+![fnox-demo](images/demo-fnox-secrets.gif)
+
+---
+<!-- .slide: data-auto-animate data-auto-animate-id="fnox-prod" -->
+
+### `fnox`
+
 <p class="direnv-caption" data-id="fnox-provider">with <code>AWS Secrets Manager</code></p>
 
 <pre data-id="fnox-config"><code class="language-toml" data-trim>
@@ -313,6 +324,7 @@ Notes:
 class="language-toml"
 data-trim
 data-line-numbers="1-2|4-6"
+data-fragment-index="0"
 >[env]
 _.fnox-env = { tools = true }
 
@@ -328,8 +340,11 @@ fnox-env = "https://github.com/jdx/mise-env-fnox"
   <div class="secret-info" data-line-callout="1-2">
     Load secrets into the <code>mise</code> environment.
   </div>
-  <div class="secret-info" data-line-callout="4-6" hidden>
+  <div class="secret-info fragment current-visible" data-line-callout="4-6" data-fragment-index="1" hidden>
     Cache remote lookups in an encrypted on-disk environment cache.
+  </div>
+  <div class="secret-info fragment current-visible" data-line-callout="4-6" data-fragment-index="2" hidden>
+    Handles cache invalidation.
   </div>
 </div>
 
