@@ -4,47 +4,6 @@
     color: #9ca3af;
   }
 
-  .reveal .slides .secret-warning {
-    margin-top: 0.9em;
-    padding: 0.85em 1em;
-    border-left: 0.28rem solid #f59e0b;
-    background: rgba(245, 158, 11, 0.12);
-    color: #3b2f0b;
-    border-radius: 0.45rem;
-    font-size: 0.72em;
-    text-align: left;
-  }
-
-  .reveal .slides .secret-info {
-    margin-top: 0.9em;
-    padding: 0.85em 1em;
-    border-left: 0.28rem solid #60a5fa;
-    background: rgba(96, 165, 250, 0.14);
-    color: #172554;
-    border-radius: 0.45rem;
-    font-size: 0.72em;
-    text-align: left;
-  }
-
-  .reveal .slides .secret-callout-stack {
-    position: relative;
-    margin-top: 0.9em;
-    min-height: 3.15em;
-  }
-
-  .reveal .slides .secret-callout-stack [data-line-callout] {
-    margin-top: 0;
-  }
-
-  .reveal .slides .secret-callout-stack .secret-info.fragment,
-  .reveal .slides .secret-callout-stack .secret-warning.fragment {
-    position: absolute;
-    inset: 0;
-    margin-top: 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
   .reveal .slides .direnv-sample {
     width: 100%;
     text-align: left;
@@ -127,7 +86,7 @@ Notes:
   </li>
 </ul>
 
-<div class="secret-warning" data-id="secrets-warning">
+<div class="slide-callout slide-callout--warning" data-id="secrets-warning">
   If you're writing secrets to files you better know your way around <code>git filter-branch</code>.
 </div>
 
@@ -158,7 +117,7 @@ export STRIPE_API_KEY="sk_test_not_great"
 export GITHUB_TOKEN="ghp_this_should_not_live_here"
 </code></pre>
 
-<div class="secret-warning fragment" data-id="secrets-warning">
+<div class="slide-callout slide-callout--warning fragment" data-id="secrets-warning">
   you're now a power user of <code>git filter-branch</code>
 </div>
 
@@ -184,14 +143,14 @@ eval "$(
 )"
 </code></pre>
 
-<div class="secret-callout-stack">
-  <div class="secret-info fragment fade-out" data-fragment-index="0">
+<div class="slide-callout-stack">
+  <div class="slide-callout slide-callout--info fragment fade-out" data-fragment-index="0">
     Better than plaintext: the checked-in artifact is encrypted, and <code>direnv</code> just handles the shell export step.
   </div>
-  <div class="secret-info fragment fade-in-then-out" data-fragment-index="1">
+  <div class="slide-callout slide-callout--info fragment fade-in-then-out" data-fragment-index="1">
     Every developer still needs a SOPS decryption key locally.
   </div>
-  <div class="secret-warning fragment fade-in-then-out" data-fragment-index="2">
+  <div class="slide-callout slide-callout--warning fragment fade-in-then-out" data-fragment-index="2">
     you've replaced secret distribution with key distribution and bootstrap.
   </div>
 </div>
@@ -217,11 +176,11 @@ export GITHUB_TOKEN="$(op read 'op://app-dev/github/token')"
 
 </code></pre>
 
-<div class="secret-callout-stack">
-  <div class="secret-info fragment fade-out" data-fragment-index="0">
+<div class="slide-callout-stack">
+  <div class="slide-callout slide-callout--info fragment fade-out" data-fragment-index="0">
     Keep the contract in <code>.envrc</code>, but fetch the values from 1Password CLI when the directory is entered.
   </div>
-  <div class="secret-warning fragment fade-in-then-out" data-fragment-index="0">
+  <div class="slide-callout slide-callout--warning fragment fade-in-then-out" data-fragment-index="0">
     calls to password managers are <em>slow</em>
   </div>
 </div>
@@ -303,11 +262,11 @@ GITHUB_TOKEN = { provider = "vault", value = "github/token" }
 vault = { type = "vault", path = "secret/prod/myapp" }
 </code></pre>
 
-<div class="secret-callout-stack">
-  <div class="secret-info fragment fade-out" data-fragment-index="0">
+<div class="slide-callout-stack">
+  <div class="slide-callout slide-callout--info fragment fade-out" data-fragment-index="0">
     Same secret names, same Vault provider name, different path by profile.
   </div>
-  <div class="secret-warning fragment fade-in-then-out" data-fragment-index="0">
+  <div class="slide-callout slide-callout--warning fragment fade-in-then-out" data-fragment-index="0">
     calls to password managers are <em>slow</em>
   </div>
 </div>
@@ -336,15 +295,15 @@ env_cache_ttl = "4h"
 fnox-env = "https://github.com/jdx/mise-env-fnox"
 </code></pre>
 
-<div class="secret-callout-stack">
-  <div class="secret-info" data-line-callout="1-2">
+<div class="slide-callout-stack">
+  <div class="slide-callout slide-callout--info" data-line-callout="1-2">
     Load secrets into the <code>mise</code> environment.
   </div>
-  <div class="secret-info fragment current-visible" data-line-callout="4-6" data-fragment-index="1" hidden>
+  <div class="slide-callout slide-callout--info fragment current-visible" data-line-callout="4-6" data-fragment-index="0" hidden>
     Cache remote lookups in an encrypted on-disk environment cache.
   </div>
-  <div class="secret-info fragment current-visible" data-line-callout="4-6" data-fragment-index="2" hidden>
-    Handles cache invalidation.
+  <div class="slide-callout slide-callout--info fragment current-visible" data-line-callout="4-6" data-fragment-index="1" hidden>
+    Automatically refreshes the cache when config, tools, or watched files change.
   </div>
 </div>
 

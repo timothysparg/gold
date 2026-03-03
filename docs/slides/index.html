@@ -16,6 +16,48 @@
 		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
 		<link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
 
+		<style>
+			.reveal .slides .slide-callout {
+				margin-top: 0.9em;
+				padding: 0.55em 1em;
+				border-left: 0.28rem solid transparent;
+				border-radius: 0.45rem;
+				font-size: 0.72em;
+				text-align: left;
+				box-sizing: border-box;
+			}
+
+			.reveal .slides .slide-callout--info {
+				border-left-color: #60a5fa;
+				background: rgba(96, 165, 250, 0.14);
+				color: #172554;
+			}
+
+			.reveal .slides .slide-callout--warning {
+				border-left-color: #f59e0b;
+				background: rgba(245, 158, 11, 0.12);
+				color: #3b2f0b;
+			}
+
+			.reveal .slides .slide-callout-stack {
+				position: relative;
+				margin-top: 0.9em;
+				min-height: 0;
+			}
+
+			.reveal .slides .slide-callout-stack [data-line-callout] {
+				margin-top: 0;
+			}
+
+			.reveal .slides .slide-callout-stack .slide-callout.fragment {
+				position: absolute;
+				inset: 0;
+				margin-top: 0;
+				width: 100%;
+				box-sizing: border-box;
+			}
+		</style>
+
 	</head>
 	<body>
 		<div class="reveal">
@@ -193,15 +235,67 @@
 				});
 			}
 
+			function updateCalloutStackHeights() {
+				const currentSlide = Reveal.getCurrentSlide();
+				if (!currentSlide) return;
+
+				currentSlide.querySelectorAll('.slide-callout-stack').forEach((stack) => {
+					const callouts = Array.from(stack.querySelectorAll('.slide-callout'));
+					const relevantCallouts = callouts.filter((callout) => {
+						if (callout.hidden) return false;
+						if (!callout.classList.contains('fragment')) return true;
+						if (callout.classList.contains('current-visible')) {
+							return callout.classList.contains('current-fragment');
+						}
+						return callout.classList.contains('visible') || callout.classList.contains('current-fragment');
+					});
+					const measuredCallouts = relevantCallouts.length ? relevantCallouts : callouts;
+					if (!measuredCallouts.length) {
+						stack.style.minHeight = '';
+						return;
+					}
+
+					let maxHeight = 0;
+					measuredCallouts.forEach((callout) => {
+						const previous = {
+							hidden: callout.hidden,
+							visibility: callout.style.visibility,
+							position: callout.style.position,
+							inset: callout.style.inset,
+							width: callout.style.width,
+						};
+
+						callout.hidden = false;
+						callout.style.visibility = 'hidden';
+						callout.style.position = 'relative';
+						callout.style.inset = 'auto';
+						callout.style.width = '100%';
+
+						maxHeight = Math.max(maxHeight, callout.getBoundingClientRect().height);
+
+						callout.hidden = previous.hidden;
+						callout.style.visibility = previous.visibility;
+						callout.style.position = previous.position;
+						callout.style.inset = previous.inset;
+						callout.style.width = previous.width;
+					});
+
+					const fontSize = parseFloat(getComputedStyle(stack).fontSize) || 16;
+					stack.style.minHeight = maxHeight > 0 ? `${maxHeight / fontSize}em` : '';
+				});
+			}
+
 			function refreshSlideEnhancements() {
 				requestAnimationFrame(() => {
 					fitHooksCodeBlocks();
 					updateLineCallouts();
+					updateCalloutStackHeights();
 					requestAnimationFrame(fitHooksCodeBlocks);
 				});
 				window.setTimeout(() => {
 					fitHooksCodeBlocks();
 					updateLineCallouts();
+					updateCalloutStackHeights();
 				}, 120);
 			}
 		</script>
