@@ -98,8 +98,8 @@
 
 <ul>
   <li data-id="hooks-line-1">nobody wants to argue about tabs or spaces</li>
-  <li data-id="hooks-line-2">devs don't do documentation</li>
-  <li data-id="hooks-line-3">if our conventions aren't codified they may as well not exist</li>
+  <li data-id="hooks-line-2">if our conventions aren't codified they may as well not exist</li>
+  <li data-id="hooks-line-3">don't wait 10 minutes for a CI server to find a syntax error</li>
 </ul>
 
 Notes:
@@ -112,8 +112,8 @@ Notes:
 
 <ul>
   <li data-id="hooks-line-1">nobody wants to argue about tabs or spaces with an <span class="ai-agent-gradient">AI agent</span></li>
-  <li data-id="hooks-line-2">devs don't do documentation, <span class="ai-agent-gradient">AI agents</span> <em>will</em> read it</li>
-  <li data-id="hooks-line-3">if our conventions aren't codified an <span class="ai-agent-gradient">AI agent</span> <em>will</em> break them</li>
+  <li data-id="hooks-line-2">if our conventions aren't codified an <span class="ai-agent-gradient">AI agent</span> <em>will</em> break them</li>
+  <li data-id="hooks-line-3">don't wait 10 minutes for a CI server to find a syntax error from your <span class="ai-agent-gradient">AI agent</span></li>
 </ul>
 
 <div class="hooks-logo-row fragment">
@@ -152,9 +152,9 @@ Notes:
 - but for me it's killer feature is that it is part of the mise ecosystem , and even though it's still a young project, that integration is only going to grow
 
 ---
-<!-- .slide: class="hooks-code-slide" -->
+<!-- .slide: class="hooks-code-slide" data-auto-animate data-auto-animate-id="hk-pre-hook" data-auto-animate-unmatched="false" -->
 
-<pre data-id="hk-config"><code class="language-pkl" data-trim data-line-numbers="1-20|1-2|5-10|11-15|16-19">
+<pre data-id="hk-config"><code class="language-pkl" data-trim data-line-numbers="1-20|1-2|5-10|11-19">
 local linters = new Mapping&lt;String, Step&gt; {
 }
 
@@ -183,7 +183,7 @@ Notes:
 - fix and check will call hk check and fix respectively
 
 ---
-<!-- .slide: class="hooks-code-slide" -->
+<!-- .slide: class="hooks-code-slide" data-auto-animate data-auto-animate-id="hk-pre-hook" data-auto-animate-unmatched="false" -->
 
 <pre data-id="hk-config"><code class="language-pkl" data-trim data-line-numbers="6">
 local linters = new Mapping&lt;String, Step&gt; {
@@ -217,20 +217,19 @@ Notes:
 <!-- .slide: class="hooks-code-slide" -->
 
 
-<pre data-id="hk-config"><code class="language-pkl" data-trim data-line-numbers="2-14">
+<pre data-id="hk-config"><code class="language-pkl" data-trim data-line-numbers="2|3-4|5-7|8-13">
 local linters = new Mapping&lt;String, Step&gt; {
     ["check-conflicts"] = Builtins.check_merge_conflict
     ["sql_fluff"] = Builtins.sql_fluff
     ["hadolint"] = Builtins.hadolint
     ["yaml"] = (Builtins.yamlfmt) {
-        exclude = (Builtins.yamlfmt.exclude ?? List()) + List("**/*.lock.yml")
+        exclude = List("**/*.lock.yml")
     }
     ["google_java_format"] {
         glob = List("**/*.java")
         exclude = List("**/target/**")
         check = "google-java-format --dry-run --set-exit-if-changed {{files}}"
         fix = "google-java-format --replace {{files}}"
-        batch = true
     }
 }
 
@@ -263,9 +262,9 @@ Notes:
 <!-- .slide: class="hooks-code-slide" -->
 
 ### mise.toml
-<pre data-id="mise-config"><code class="language-toml" data-trim data-line-numbers="1-7|9-15|20-24">
+<pre data-id="mise-config"><code class="language-toml" data-trim data-line-numbers="1-7|2|9-15">
 [tools]
-hk = "latest"
+hk = { version = "latest", postinstall = "hk install --mise" }
 pkl = "latest"
 "pipx:sqlfluff" = "latest"
 uv = "latest"
@@ -282,14 +281,6 @@ run = "hk fix"
 
 [env]
 HK_MISE = true
-
-[hooks]
-enter = '''
-if ! grep -q "hk run" .git/hooks/pre-push 2>/dev/null; then
-  mise exec hk pkl -- hk install --mise
-fi
-'''
-
 </code></pre>
 
 Notes:

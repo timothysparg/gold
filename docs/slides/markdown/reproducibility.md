@@ -16,7 +16,110 @@ Notes:
 
 ---
 
-![Empty README](images/empty-readme.png)
+<style>
+  .reveal .slides section .github-readme {
+    width: min(82%, 22rem);
+    min-height: 14rem;
+    margin: 0 auto;
+    padding: 1.25rem 1.4rem;
+    border: 0.0625rem solid #30363d;
+    border-radius: 0.75rem;
+    background: #0d1117;
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.28);
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .reveal .slides section .github-readme-header {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+    color: #8b949e;
+    font-size: 0.34em;
+    letter-spacing: 0.01em;
+  }
+
+  .reveal .slides section .github-readme-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999rem;
+    background: #30363d;
+    flex: 0 0 auto;
+  }
+
+  .reveal .slides section .github-readme-body {
+    border-top: 0.0625rem solid #21262d;
+    padding-top: 1rem;
+    min-height: 9.5rem;
+  }
+
+  .reveal .slides section .github-readme-title {
+    margin: 0 0 0.9rem 0;
+    color: #e6edf3;
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .reveal .slides section .github-readme-rule {
+    height: 0.0625rem;
+    background: #21262d;
+  }
+
+  .reveal .slides section .github-readme-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    padding-top: 0.2rem;
+    text-align: center;
+  }
+
+  .reveal .slides section .github-readme-empty-title {
+    color: #e6edf3;
+    font-size: 0.62em;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .reveal .slides section .github-readme-empty-copy {
+    max-width: 18rem;
+    color: #8b949e;
+    font-size: 0.38em;
+    line-height: 1.35;
+  }
+
+  .reveal .slides section .github-readme-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.2rem;
+    padding: 0.35rem 0.9rem;
+    border: 0.0625rem solid rgba(240, 246, 252, 0.1);
+    border-radius: 0.4rem;
+    background: #1f6feb;
+    color: #ffffff;
+    font-size: 0.38em;
+    font-weight: 600;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+</style>
+
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-images" -->
+
+<div data-id="readme-image" class="github-readme">
+  <div class="github-readme-header">
+    <span class="github-readme-dot"></span>
+    <span>README.md</span>
+  </div>
+  <div class="github-readme-body github-readme-empty">
+    <div class="github-readme-empty-title">Add a README</div>
+    <div class="github-readme-empty-copy">Add a README with an overview of the project.</div>
+    <div class="github-readme-button">Add a README</div>
+  </div>
+</div>
 
 Notes:
 - I think this might be a silent scream for help in 'corporate'
@@ -24,9 +127,18 @@ Notes:
 - you know if you see this, that that codebase is going to be an experience ....
 
 ---
+<!-- .slide: data-auto-animate data-auto-animate-id="readme-images" -->
 
-
-![minimal README](images/minimal-readme.png)
+<div data-id="readme-image" class="github-readme">
+  <div class="github-readme-header">
+    <span class="github-readme-dot"></span>
+    <span>README.md</span>
+  </div>
+  <div class="github-readme-body">
+    <h3 class="github-readme-title">Backend</h3>
+    <div class="github-readme-rule"></div>
+  </div>
+</div>
 
 
 ---
@@ -43,7 +155,7 @@ Notes:
 
 ---
 
-```markdown [13-15|7-10]
+```markdown [12-16|5-10]
 ## Introduction
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -56,11 +168,13 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 - Docker
 
 ## Quick Start
+
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 ./mvnw spring-boot:run
 
 ## Deep dive
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
 ```
@@ -101,6 +215,7 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 - Docker
 
 ## Quick Start
+
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 ./mvnw spring-boot:run
@@ -125,11 +240,13 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 - Docker
 
 ## Quick Start
+
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 ./mvnw spring-boot:run
 
 ## Deep dive
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
 </code></pre>
@@ -150,11 +267,13 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 - Actionlint
 
 ## Quick Start
+
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 ./mvnw spring-boot:run
 
 ## Deep dive
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
 </code></pre>
@@ -180,11 +299,13 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 - Hadolint
 
 ## Quick Start
+
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 ./mvnw spring-boot:run
 
 ## Deep dive
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
 </code></pre>
@@ -274,6 +395,14 @@ Notes:
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0.45rem;
+    border: 0.14rem solid rgba(255, 255, 255, 0.55);
+    border-radius: 0.7rem;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow:
+      inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.12),
+      0 0 0 0.0625rem rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
     margin-bottom: 0.28rem;
   }
 

@@ -45,10 +45,3 @@ experimental = true
 
 [plugins]
 fnox-env = "https://github.com/jdx/mise-env-fnox"
-
-[hooks]
-enter = '''
-if ! grep -q "hk run" .git/hooks/pre-commit 2>/dev/null; then
-  mise exec hk pkl -- hk install --mise
-fi
-'''

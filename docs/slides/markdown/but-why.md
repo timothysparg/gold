@@ -28,7 +28,7 @@ Is this a silver bullet? <br/> <!-- .element: class="fragment semi-fade-out shri
 
 <figure>
   <blockquote>
-    It's an opinionated approach to improve developer experience over time
+    It's an opinionated approach to improved developer experience over time
     </blockquote>
 </figure>
 <!-- .element: class="fragment" -->

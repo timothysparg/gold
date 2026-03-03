@@ -165,12 +165,37 @@
 				});
 			}
 
+			function normalizeLineStep(value) {
+				return (value || '').replace(/\s/g, '');
+			}
+
+			function updateLineCallouts() {
+				const currentSlide = Reveal.getCurrentSlide();
+				if (!currentSlide) return;
+
+				const codes = Array.from(currentSlide.querySelectorAll('code[data-line-numbers]'));
+				const activeCode =
+					codes.find((code) => code.classList.contains('current-fragment')) ||
+					codes.find((code) => !code.classList.contains('fragment')) ||
+					null;
+
+				const activeLineStep = normalizeLineStep(activeCode?.getAttribute('data-line-numbers'));
+
+				currentSlide.querySelectorAll('[data-line-callout]').forEach((target) => {
+					target.hidden = normalizeLineStep(target.dataset.lineCallout) !== activeLineStep;
+				});
+			}
+
 			function refreshSlideEnhancements() {
 				requestAnimationFrame(() => {
 					fitHooksCodeBlocks();
+					updateLineCallouts();
 					requestAnimationFrame(fitHooksCodeBlocks);
 				});
-				window.setTimeout(fitHooksCodeBlocks, 120);
+				window.setTimeout(() => {
+					fitHooksCodeBlocks();
+					updateLineCallouts();
+				}, 120);
 			}
 		</script>
 		<script src="reveal.js/vendor/highlightjs-pkl/pkl.min.js"></script>
