@@ -659,8 +659,89 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 </code></pre>
 
 <div class="slide-callout slide-callout--info" data-line-callout="9">
-  <code>mise</code> gives you one place to manage a polyglot toolchain.
+  <code>mise</code> gives you one place to manage a polyglot toolchain
 </div>
 
 
 Notes:
+
+---
+<!-- .slide: data-auto-animate data-auto-animate-id="github-actions-ci" -->
+
+<p><img src="images/backend-github.svg" alt="GitHub" style="height: 1.6em;"></p>
+
+<pre data-id="github-actions-workflow"><code class="language-yaml" data-trim data-line-numbers="13">
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v2
+      - run: mise run build
+</code></pre>
+
+---
+<!-- .slide: data-auto-animate data-auto-animate-id="github-actions-ci" -->
+
+<p><img src="images/backend-github.svg" alt="GitHub" style="height: 1.6em;"></p>
+
+<pre data-id="github-actions-workflow"><code class="language-yaml" data-trim data-line-numbers="13-17|19-28|30-31|33" data-fragment-index="0">
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mise
+        run: |
+          curl https://mise.run | sh
+          echo "$HOME/.local/share/mise/bin" >> $GITHUB_PATH
+          echo "$HOME/.local/share/mise/shims" >> $GITHUB_PATH
+
+      - name: Restore mise cache
+        id: mise-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/mise
+            ~/.cache/mise
+          key: mise-${{ runner.os }}-${{ hashFiles('mise.toml', '.tool-versions', '**/mise.toml') }}
+          restore-keys: |
+            mise-${{ runner.os }}-
+
+      - name: mise install
+        run: mise install
+
+      - run: mise run build
+</code></pre>
+
+<div class="slide-callout slide-callout--info" data-line-callout="13-17">
+  Install mise
+</div>
+
+<div class="slide-callout slide-callout--info" data-line-callout="19-28">
+  Restore GitHub Actions cache for mise tools
+</div>
+
+<div class="slide-callout slide-callout--info" data-line-callout="30-31">
+  Install tools defined in mise.toml
+</div>
+
+---
+
+![demo](images/mise-in-docker-demo.gif)
+
+Notes:
+- and what would that look like in action

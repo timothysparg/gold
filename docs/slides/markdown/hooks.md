@@ -183,19 +183,19 @@ hooks {
 </code></pre>
 
 <div class="slide-callout slide-callout--info" data-line-callout="1-20">
-  The whole file is just two parts: define reusable steps, then wire them into named hooks.
+  The whole file is just two parts: define reusable steps, then wire them into named hooks
 </div>
 <div class="slide-callout slide-callout--info" data-line-callout="1-2" hidden>
-  Start by defining a mapping of linter steps that can be reused across hooks.
+  Start by defining a mapping of linter steps that can be reused across hooks
 </div>
 <div class="slide-callout slide-callout--info" data-line-callout="4-19" hidden>
-  The <code>hooks</code> block maps reusable steps onto both git hooks and direct <code>hk</code> commands.
+  The <code>hooks</code> block maps reusable steps onto both git hooks and direct <code>hk</code> commands
 </div>
 <div class="slide-callout slide-callout--info" data-line-callout="5-10" hidden>
-  Here <code>pre-commit</code> is configured to run those steps, with fixes enabled and git stash handling.
+  Here <code>pre-commit</code> is configured to run those steps, with fixes enabled and git stash handling
 </div>
 <div class="slide-callout slide-callout--info" data-line-callout="11-19" hidden>
-  These named commands let you run the same checks directly with <code>hk fix</code> and <code>hk check</code>.
+  These named commands let you run the same checks directly with <code>hk fix</code> and <code>hk check</code>
 </div>
 
 Notes:
@@ -230,7 +230,7 @@ hooks {
 </code></pre>
 
 <div class="slide-callout slide-callout--info" data-line-callout="6">
-  If <code>pre-commit</code> feels too intrusive, the same checks can be moved to <code>pre-push</code> so local commits stay fast.
+  If <code>pre-commit</code> feels too intrusive, the same checks can be moved to <code>pre-push</code> so local commits stay fast
 </div>
 
 Notes:
@@ -278,16 +278,16 @@ hooks {
 </code></pre>
 
 <div class="slide-callout slide-callout--info" data-line-callout="2">
-  <code>hk</code> ships with useful built-ins, like merge-conflict detection, so you do not have to define everything from scratch.
+  <code>hk</code> ships with useful built-ins, like merge-conflict detection, so you do not have to define everything from scratch
 </div>
 <div class="slide-callout slide-callout--info" data-line-callout="3-4" hidden>
-  Standard tools like <code>sqlfluff</code> and <code>hadolint</code> can be pulled in directly as reusable steps.
+  Standard tools like <code>sqlfluff</code> and <code>hadolint</code> can be pulled in directly as reusable steps
 </div>
 <div class="slide-callout slide-callout--info" data-line-callout="5-7" hidden>
-  Built-ins are still configurable, here <code>yamlfmt</code> is tweaked to ignore lockfiles.
+  Built-ins are still configurable, here <code>yamlfmt</code> is tweaked to ignore lockfiles
 </div>
 <div class="slide-callout slide-callout--info" data-line-callout="8-13" hidden>
-  And when a builtin is not enough, you can define a custom step.
+  And when a builtin is not enough, you can define a custom step
 </div>
 
 Notes:
@@ -300,7 +300,7 @@ Notes:
 <!-- .slide: class="hooks-code-slide" -->
 
 ### mise.toml
-<pre data-id="mise-config"><code class="language-toml" data-trim data-line-numbers="1-7|2|9-15">
+<pre data-id="mise-config"><code class="language-toml" data-trim data-line-numbers="1-7|2|9-23">
 [tools]
 hk = { version = "latest", postinstall = "hk install --mise" }
 pkl = "latest"
@@ -317,18 +317,26 @@ run = "hk check"
 description = "Apply hk automatic fixes"
 run = "hk fix"
 
+[tasks.build]
+description = "Build and test the project with Maven"
+run = "./mvnw clean install"
+
+[tasks."build:native"]
+description = "Compile a native executable using the Maven native profile"
+run = "./mvnw native:compile -Pnative"
+
 [env]
 HK_MISE = true
 </code></pre>
 
 <div class="slide-callout slide-callout--info" data-line-callout="1-7">
-  <code>mise</code> installs the entire toolchain for this workflow, not just <code>hk</code> itself.
+  <code>mise</code> installs the entire toolchain for this workflow, not just <code>hk</code> itself
 </div>
 <div class="slide-callout slide-callout--info" data-line-callout="2" hidden>
-  The <code>postinstall</code> hook lets <code>hk</code> register its git hooks as part of tool setup.
+  The <code>postinstall</code> hook lets <code>hk</code> register its git hooks as part of tool setup
 </div>
-<div class="slide-callout slide-callout--info" data-line-callout="9-15" hidden>
-  These tasks can make <code>mise</code> the central place to register and discover project commands, not just hook-related ones.
+<div class="slide-callout slide-callout--info" data-line-callout="9-23" hidden>
+  These tasks can make <code>mise</code> the central place to register and discover project commands, not just hook-related ones
 </div>
 
 Notes:

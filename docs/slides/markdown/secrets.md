@@ -87,12 +87,12 @@ Notes:
 </ul>
 
 <div class="slide-callout slide-callout--warning" data-id="secrets-warning">
-  If you're writing secrets to files you better know your way around <code>git filter-branch</code>.
+  If you're writing secrets to files you better know your way around <code>git filter-branch</code>
 </div>
 
 ---
 
-### `direnv`
+<h3><img src="images/direnv-logo.svg" alt="direnv" style="height: 1.05em; vertical-align: middle; margin-right: 0.35em;"><code>direnv</code></h3>
 
 ![direnv](images/direnv-quickstart.gif)
 
@@ -105,7 +105,7 @@ Notes:
 ---
 <!-- .slide: data-auto-animate data-auto-animate-id="direnv-secrets" -->
 
-### `direnv`
+<h3><img src="images/direnv-logo.svg" alt="direnv" style="height: 1.05em; vertical-align: middle; margin-right: 0.35em;"><code>direnv</code></h3>
 
 <p class="direnv-caption" data-id="direnv-approach">with <code>plaintext</code></p>
 
@@ -128,7 +128,7 @@ Notes:
 ---
 <!-- .slide: data-auto-animate data-auto-animate-id="direnv-secrets" -->
 
-### `direnv`
+<h3><img src="images/direnv-logo.svg" alt="direnv" style="height: 1.05em; vertical-align: middle; margin-right: 0.35em;"><code>direnv</code></h3>
 
 <p class="direnv-caption" data-id="direnv-approach">with <code>sops</code></p>
 
@@ -145,13 +145,13 @@ eval "$(
 
 <div class="slide-callout-stack">
   <div class="slide-callout slide-callout--info fragment fade-out" data-fragment-index="0">
-    Better than plaintext: the checked-in artifact is encrypted, and <code>direnv</code> just handles the shell export step.
+    Better than plaintext: the checked-in artifact is encrypted, and <code>direnv</code> just handles the shell export step
   </div>
-  <div class="slide-callout slide-callout--info fragment fade-in-then-out" data-fragment-index="1">
-    Every developer still needs a SOPS decryption key locally.
+  <div class="slide-callout slide-callout--info fragment fade-in-then-out" data-fragment-index="0">
+    Every developer still needs a SOPS decryption key locally
   </div>
-  <div class="slide-callout slide-callout--warning fragment fade-in-then-out" data-fragment-index="2">
-    you've replaced secret distribution with key distribution and bootstrap.
+  <div class="slide-callout slide-callout--warning fragment fade-in-then-out" data-fragment-index="1">
+    you've replaced secret distribution with key distribution and bootstrap
   </div>
 </div>
 
@@ -163,7 +163,7 @@ Notes:
 ---
 <!-- .slide: data-auto-animate data-auto-animate-id="direnv-secrets" -->
 
-### `direnv`
+<h3><img src="images/direnv-logo.svg" alt="direnv" style="height: 1.05em; vertical-align: middle; margin-right: 0.35em;"><code>direnv</code></h3>
 
 <p class="direnv-caption" data-id="direnv-approach">with <code>1Password</code></p>
 
@@ -178,7 +178,7 @@ export GITHUB_TOKEN="$(op read 'op://app-dev/github/token')"
 
 <div class="slide-callout-stack">
   <div class="slide-callout slide-callout--info fragment fade-out" data-fragment-index="0">
-    Keep the contract in <code>.envrc</code>, but fetch the values from 1Password CLI when the directory is entered.
+    Keep the contract in <code>.envrc</code>, but fetch the values from 1Password CLI when the directory is entered
   </div>
   <div class="slide-callout slide-callout--warning fragment fade-in-then-out" data-fragment-index="0">
     calls to password managers are <em>slow</em>
@@ -190,20 +190,16 @@ Notes:
 - direnv stays as the entry point, but secret material is injected from a real secret store
 
 ---
-
-None of this really gets us closer to production secret handling on our laptops but it certainly lays the groundwork
-
----
 <!-- .slide: data-auto-animate data-auto-animate-id="fnox-prod" -->
 
-### `fnox`
+<h3><img src="images/fnox.svg" alt="fnox" style="height: 1.05em; vertical-align: middle; margin-right: 0.35em;"><code>fnox</code></h3>
 
 ![fnox-demo](images/demo-fnox-secrets.gif)
 
 ---
 <!-- .slide: data-auto-animate data-auto-animate-id="fnox-prod" -->
 
-### `fnox`
+<h3><img src="images/fnox.svg" alt="fnox" style="height: 1.05em; vertical-align: middle; margin-right: 0.35em;"><code>fnox</code></h3>
 
 <p class="direnv-caption" data-id="fnox-provider">with <code>AWS Secrets Manager</code></p>
 
@@ -224,7 +220,7 @@ Notes:
 ---
 <!-- .slide: data-auto-animate data-auto-animate-id="fnox-prod" -->
 
-### `fnox`
+<h3><img src="images/fnox.svg" alt="fnox" style="height: 1.05em; vertical-align: middle; margin-right: 0.35em;"><code>fnox</code></h3>
 
 <p class="direnv-caption" data-id="fnox-provider">with <code>HashiCorp Vault</code></p>
 
@@ -245,7 +241,7 @@ Notes:
 ---
 <!-- .slide: data-auto-animate data-auto-animate-id="fnox-prod" -->
 
-### `fnox`
+<h3><img src="images/fnox.svg" alt="fnox" style="height: 1.05em; vertical-align: middle; margin-right: 0.35em;"><code>fnox</code></h3>
 
 <p class="direnv-caption" data-id="fnox-provider">with <code>HashiCorp Vault profiles</code></p>
 
@@ -264,7 +260,7 @@ vault = { type = "vault", path = "secret/prod/myapp" }
 
 <div class="slide-callout-stack">
   <div class="slide-callout slide-callout--info fragment fade-out" data-fragment-index="0">
-    Same secret names, same Vault provider name, different path by profile.
+    Same secret names, same Vault provider name, different path by profile
   </div>
   <div class="slide-callout slide-callout--warning fragment fade-in-then-out" data-fragment-index="0">
     calls to password managers are <em>slow</em>
@@ -277,7 +273,11 @@ Notes:
 
 ---
 
-### `mise` + `fnox`
+<h3>
+  <img src="images/mise.svg" alt="mise" style="height: 1.05em; vertical-align: middle;">
+  <span style="vertical-align: middle;">&amp;</span>
+  <img src="images/fnox.svg" alt="fnox" style="height: 1.05em; vertical-align: middle;">
+</h3>
 
 <pre><code
 class="language-toml"
@@ -297,13 +297,13 @@ fnox-env = "https://github.com/jdx/mise-env-fnox"
 
 <div class="slide-callout-stack">
   <div class="slide-callout slide-callout--info" data-line-callout="1-2">
-    Load secrets into the <code>mise</code> environment.
+    Load secrets into the <code>mise</code> environment
   </div>
   <div class="slide-callout slide-callout--info fragment current-visible" data-line-callout="4-6" data-fragment-index="0" hidden>
-    Cache remote lookups in an encrypted on-disk environment cache.
+    Cache remote lookups in an encrypted on-disk environment cache
   </div>
   <div class="slide-callout slide-callout--info fragment current-visible" data-line-callout="4-6" data-fragment-index="1" hidden>
-    Automatically refreshes the cache when config, tools, or watched files change.
+    Automatically refreshes the cache when config, tools, or watched files change
   </div>
 </div>
 
