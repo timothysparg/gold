@@ -233,6 +233,16 @@
 
 					target.hidden = !matchesLineStep || !matchesFragmentState;
 				});
+
+				currentSlide.querySelectorAll('.slide-callout-stack').forEach((stack) => {
+					const activeFragmentCallout = Array.from(stack.querySelectorAll('[data-line-callout].fragment'))
+						.some((target) => !target.hidden);
+					if (!activeFragmentCallout) return;
+
+					stack.querySelectorAll('[data-line-callout]:not(.fragment)').forEach((target) => {
+						target.hidden = true;
+					});
+				});
 			}
 
 			function updateCalloutStackHeights() {

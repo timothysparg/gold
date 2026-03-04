@@ -155,7 +155,7 @@ Notes:
 
 ---
 
-```markdown [12-16|5-10]
+<pre><code class="language-markdown" data-trim data-line-numbers="12-16|6-10">
 ## Introduction
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -177,7 +177,16 @@ cd spring-petclinic
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
-```
+</code></pre>
+
+<div class="slide-callout-stack">
+  <div class="slide-callout slide-callout--info" data-line-callout="12-16">
+    You probably only care about the Quick Start
+  </div>
+  <div class="slide-callout slide-callout--info" data-line-callout="6-10" hidden>
+    And if that fails you <em>might</em> go and look at the prerequisites
+  </div>
+</div>
 
 Notes:
 - so what do we actually want from a README - probably just the quickstart right?
@@ -250,6 +259,12 @@ cd spring-petclinic
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
 </code></pre>
+
+<div class="slide-callout-stack">
+  <div class="slide-callout slide-callout--info" data-line-callout="8">
+    In the java world we do work quite hard to try resolve our tooling dependencies in an automated manner
+  </div>
+</div>
 
 ---
 
@@ -398,7 +413,7 @@ Notes:
     padding: 0.45rem;
     border: 0.14rem solid rgba(255, 255, 255, 0.55);
     border-radius: 0.7rem;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(148, 163, 184, 0.18);
     box-shadow:
       inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.12),
       0 0 0 0.0625rem rgba(255, 255, 255, 0.2);
@@ -576,7 +591,7 @@ Notes:
 
 <!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
 
-<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="11">
+<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="11-12|11|12|9-12" data-fragment-index="0">
 ## Introduction
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -587,35 +602,7 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 - Docker
 - Actionlint
 - hadolint
-- sqlfluff (python)
-
-## Quick Start
-git clone https://github.com/spring-projects/spring-petclinic.git
-cd spring-petclinic
-./mvnw spring-boot:run
-
-## Deep dive
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
-</code></pre>
-
-Notes:
-
----
-<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
-
-<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="12">
-## Introduction
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
-
-## Prerequisites
-
-- Docker
-- Actionlint
-- hadolint
-- sqlfluff (python)
+- sqlfluff
 - markdownlint
 
 ## Quick Start
@@ -628,34 +615,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
 </code></pre>
 
-Notes:
+<div class="slide-callout-stack">
+  <div class="slide-callout slide-callout--info" data-line-callout="11">
+    This linter quietly implies that we need Python
+  </div>
+  <div class="slide-callout slide-callout--info" data-line-callout="12" hidden>
+    This linter quietly implies that we need Nodejs
+  </div>
+  <div class="slide-callout slide-callout--warning" data-line-callout="9-12" hidden>
+    our tooling ecosystem is growing
+  </div>
+  <div class="slide-callout slide-callout--warning fragment current-visible" data-line-callout="9-12" data-fragment-index="3" hidden>
+    Do we now shove this into CI, or ask the devs to install all of it?
+  </div>
+</div>
 
----
-<!-- .slide: data-auto-animate data-auto-animate-id="readme-prereqs" -->
-
-<pre data-id="readme-prereqs-block"><code class="language-markdown" data-trim data-noescape data-line-numbers="12">
-## Introduction
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
-
-## Prerequisites
-
-- Docker
-- Actionlint
-- hadolint
-- sqlfluff (python)
-- markdownlint (nodejs)
-
-## Quick Start
-git clone https://github.com/spring-projects/spring-petclinic.git
-cd spring-petclinic
-./mvnw spring-boot:run
-
-## Deep dive
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
-</code></pre>
 
 Notes:
 
@@ -683,5 +657,10 @@ cd spring-petclinic
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
 </code></pre>
+
+<div class="slide-callout slide-callout--info" data-line-callout="9">
+  <code>mise</code> gives you one place to manage a polyglot toolchain.
+</div>
+
 
 Notes:
