@@ -4,14 +4,16 @@ Developers lives are getting more complicated by the day, and we all feel that i
 
 - how can we manage that complexity?<!-- .element: class="fragment" -->
 - can we make it easier to onboard new devs? <!-- .element: class="fragment" -->
-- is a convention even real if we don't enforce it? <!-- .element: class="fragment" -->
+<!-- - is a convention even real if we don't enforce it? .element: class="fragment" -->
 - how close can we get to production on our laptops? <!-- .element: class="fragment" -->
+- how close can we get to git clone -> run <!-- .element: class="fragment" -->
 
-```bash
+<!-- ```bash
 git clone
 ./mvnw spring-boot:run
 
-```
+``` -->
+
 <!-- .element: class="fragment" -->
 
 Notes:

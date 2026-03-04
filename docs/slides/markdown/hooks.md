@@ -102,9 +102,9 @@
 <!-- .slide: data-auto-animate data-auto-animate-id="git-hooks-ai" -->
 
 <ul>
-  <li data-id="hooks-line-1">nobody wants to argue about tabs or spaces</li>
-  <li data-id="hooks-line-2">if our conventions aren't codified they may as well not exist</li>
-  <li data-id="hooks-line-3">don't wait 10 minutes for a CI server to find a syntax error</li>
+  <li data-id="hooks-line-1" class="fragment">nobody wants to argue about tabs or spaces</li>
+  <li data-id="hooks-line-2" class="fragment">if our conventions aren't codified they may as well not exist</li>
+  <li data-id="hooks-line-3" class="fragment">don't wait 10 minutes for a CI server to find a syntax error</li>
 </ul>
 
 Notes:
