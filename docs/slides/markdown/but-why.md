@@ -1,12 +1,31 @@
+<style>
+  .reveal .slides section [data-clone-run-badge] {
+    display: inline-block;
+    padding: 0.14em 0.5em;
+    border-radius: 0.45em;
+    background: rgba(251, 191, 36, 0.28);
+    border: 0.07rem solid rgba(245, 158, 11, 0.75);
+    color: #111827;
+    font-family: var(--r-code-font);
+    font-variant-ligatures: contextual;
+    font-feature-settings: "calt" 1, "liga" 1;
+    font-weight: 700;
+    font-size: 0.92em;
+    letter-spacing: 0.01em;
+    box-shadow: 0 0.12rem 0.35rem rgba(0, 0, 0, 0.12);
+  }
+</style>
+
 ## Why are we here?
 
 Developers lives are getting more complicated by the day, and we all feel that increase in complexity.
 
-- how can we manage that complexity?<!-- .element: class="fragment" -->
-- can we make it easier to onboard new devs? <!-- .element: class="fragment" -->
-<!-- - is a convention even real if we don't enforce it? .element: class="fragment" -->
-- how close can we get to production on our laptops? <!-- .element: class="fragment" -->
-- how close can we get to git clone -> run <!-- .element: class="fragment" -->
+<ul>
+  <li class="fragment">how can we manage that complexity?</li>
+  <li class="fragment">can we make it easier to onboard new devs?</li>
+  <li class="fragment">how close can we get to production on our laptops?</li>
+  <li class="fragment">how close can we get to <span data-clone-run-badge>$ git clone --> run</span></li>
+</ul>
 
 <!-- ```bash
 git clone

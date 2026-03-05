@@ -53,7 +53,7 @@ Engineering Lead at KLM
     <p class="intro-ts-industries-label">Industry Experience</p>
     <div class="intro-ts-industries">
     <div class="intro-ts-industry"><span class="intro-ts-industry-icon">🏥</span><span>Healthcare</span></div>
-    <div class="intro-ts-industry"><span class="intro-ts-industry-icon">📳</span><span>Telecommunications</span></div>
+    <div class="intro-ts-industry"><span class="intro-ts-industry-icon">📞</span><span>Telecommunications</span></div>
     <div class="intro-ts-industry"><span class="intro-ts-industry-icon">🏛</span><span>Government &amp; Trade</span></div>
     <div class="intro-ts-industry"><span class="intro-ts-industry-icon">✈️</span><span>Aviation</span></div>
     <div class="intro-ts-industry"><span class="intro-ts-industry-icon">📈</span><span>Financial Services</span></div>

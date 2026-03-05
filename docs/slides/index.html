@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="reveal.js/dist/reset.css">
 		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
 		<link rel="stylesheet" href="reveal.js/dist/theme/simple.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
@@ -17,6 +18,17 @@
 		<link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
 
 		<style>
+			:root {
+				--r-code-font: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+			}
+
+			.reveal code,
+			.reveal pre code {
+				font-family: var(--r-code-font);
+				font-variant-ligatures: contextual;
+				font-feature-settings: "calt" 1, "liga" 1;
+			}
+
 			.reveal .slides .slide-callout {
 				margin-top: 0.9em;
 				padding: 0.55em 1em;
