@@ -284,7 +284,7 @@ fnox-env = "https://github.com/jdx/mise-env-fnox"
     Cache remote lookups in an encrypted on-disk environment cache
   </div>
   <div class="slide-callout slide-callout--info fragment current-visible" data-line-callout="4-6" data-fragment-index="1" hidden>
-    Automatically refreshes the cache when config, tools, or watched files change
+    Invalidates cache
   </div>
 </div>
 

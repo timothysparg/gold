@@ -1,7 +1,7 @@
 <style>
   .reveal .slides section .ai-agent-gradient {
-    font-weight: 500;
-    font-size: 0.9em;
+    font-weight: 800;
+    font-size: 1.1em;
     background: linear-gradient(
       to right,
       #67d8df 0%,
