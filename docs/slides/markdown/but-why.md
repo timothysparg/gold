@@ -14,8 +14,6 @@ git clone
 
 ``` -->
 
-<!-- .element: class="fragment" -->
-
 Notes:
 - the breadth of knowledge that you have to have right now is breathtaking
 - Just to give you an idea: I was happy that I learnt Java just before generics were introduced - It's been a long time since I was accused of being an intelligent man

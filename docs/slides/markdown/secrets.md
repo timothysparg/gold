@@ -49,7 +49,6 @@ Notes:
 ---
 <!-- .slide: data-auto-animate data-auto-animate-id="secrets-fragmented" -->
 
-## Secrets
 
 <ul>
   <li data-id="secrets-point-1" class="fragment">they way we provide secrets in dev and production is never the same</li>
@@ -64,31 +63,13 @@ Notes:
 </ul>
 
 
+<div class="fragment slide-callout slide-callout--warning" data-id="secrets-warning">
+  If you're writing secrets to files you better know your way around <code>git filter-branch</code>
+</div>
+
 Notes:
 - how many times have you deployed service, and then started scratching your head trying to understand
  why the secret that your provider was supposed to inject wasn't there
-
-
----
-<!-- .slide: data-auto-animate data-auto-animate-id="secrets-fragmented" -->
-
-## Secrets
-
-<ul>
-  <li data-id="secrets-point-1">they way we provide secrets in dev and production is never the same</li>
-  <li data-id="secrets-point-2">
-    devs often do it differently
-    <ul>
-      <li data-id="secrets-point-3"><code>IDE</code> run configuration</li>
-      <li data-id="secrets-point-4">expose a variable</li>
-      <li data-id="secrets-point-5">write it to a file</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="slide-callout slide-callout--warning" data-id="secrets-warning">
-  If you're writing secrets to files you better know your way around <code>git filter-branch</code>
-</div>
 
 ---
 

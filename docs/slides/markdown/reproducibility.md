@@ -262,7 +262,7 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 
 <div class="slide-callout-stack">
   <div class="slide-callout slide-callout--info" data-line-callout="8">
-    In the java world we do work quite hard to try resolve our tooling dependencies in an automated manner
+    we want as few of these hard dependencies as possible
   </div>
 </div>
 
@@ -354,7 +354,7 @@ mise.jdx.dev
 - supply chain security <!-- .element: class="fragment fade-in-then-semi-out" -->
 - direnv functionality <!-- .element: class="fragment fade-in-then-semi-out" -->
 - task runner <!-- .element: class="fragment fade-in-then-semi-out" -->
-- performance <!-- .element: class="fragment fade-in-then-semi-out" -->
+<!-- - performance .element: class="fragment fade-in-then-semi-out" -->
 - lockfiles <!-- .element: class="fragment fade-in-then-semi-out" -->
 - integration with hk,pitchfork, fnox <!-- .element: class="fragment " -->
 
@@ -732,7 +732,7 @@ jobs:
 </div>
 
 <div class="slide-callout slide-callout--info" data-line-callout="19-28">
-  Restore GitHub Actions cache for mise tools
+  Take advantage of caching
 </div>
 
 <div class="slide-callout slide-callout--info" data-line-callout="30-31">
