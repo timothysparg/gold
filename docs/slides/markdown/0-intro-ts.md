@@ -63,6 +63,7 @@ Engineering Lead at KLM
 
 Notes:
 - Continuously curious about improving developer productivity
+- experience in a broad range of industries
 
 
 <!-- ---

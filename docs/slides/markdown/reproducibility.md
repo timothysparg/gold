@@ -12,7 +12,7 @@ I want the title to stay at the top of the page
 
 
 Notes:
-- I should really find easier words to use than a 7 syllable words when I'm on a stage
+- Reproducibility 
 
 ---
 
@@ -146,12 +146,11 @@ Notes:
 ![unixodbc](images/oh-unixodbc-demo.gif)
 
 Notes:
-- I was helping a colleague setup a python project and we just went down this rabbithole of tools that needed to be installed, but weren't documented
-- My initial remark was to ask that he please update the README
-- but I was curious - was there a way in which we could automatially install all of the deps - why can't we do `uv sync` or `poetry install`
-- As Java devs this is something that we fortunately don't run into very often, unless you're working with JNA style apps
+- colleague python project, dependency rabbithole
+- please update the README
+- why can't we do `uv sync` or `poetry install`
+- Java devs lucky - JNA or docker
 - at the end of the day we just added `brew install unixodbc` to the README
-
 
 ---
 
@@ -190,16 +189,23 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 
 Notes:
 - so what do we actually want from a README - probably just the quickstart right?
-- I think the petclinic app actually does this pretty well - they're pretty close to that holy grail of git clone & run
+- petclinic does this really well
 - and then if that fails we'll go and look at the prerequisites section... maybe
 
 ---
 
-<div style="display:flex; gap:1.25rem; justify-content:center;">
-  <img src="images/jenv.png" width="25%">
-  <img src="images/sdkman-pattern.svg" width="25%">
-  <img src="images/backend-asdf.svg" width="25%">
-  <img src="images/mise.svg" width="25%">
+<div style="display:flex; flex-direction:column; gap:0.9rem; align-items:center;">
+  <div style="display:flex; justify-content:space-evenly; align-items:center; width:96%;">
+    <img src="images/Apache_Maven_logo.svg" width="16%">
+    <img src="images/Gradle_logo.svg" width="16%">
+    <img src="images/bazel-logo.svg" width="16%">
+  </div>
+  <div style="display:flex; justify-content:space-evenly; align-items:center; width:98%;">
+    <img src="images/jenv.png" width="18%">
+    <img src="images/sdkman-pattern.svg" width="18%">
+    <img src="images/backend-asdf.svg" width="18%">
+    <img src="images/mise.svg" width="18%">
+  </div>
 </div>
 
 
@@ -233,6 +239,9 @@ cd spring-petclinic
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed
 </code></pre>
+
+Notes:
+- so we don't really need to worry about maven and java
 
 ---
 
@@ -294,6 +303,7 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 </code></pre>
 
 Notes:
+- we are not just in a _java_ world - we need to live and work with other tools
 - ok, so we're building with github actions and because I'm 'me' I keep on making mistakes
 - and I only see these mistakes after I've pushed and had to twirl my fingers and wait for the new error
 
@@ -331,11 +341,18 @@ Notes:
 ---
 <!-- .slide: data-auto-animate -->
 
-<div style="display:flex; gap:1.25rem; justify-content:center;">
-  <img src="images/jenv.png" width="25%">
-  <img src="images/sdkman-pattern.svg" width="25%">
-  <img src="images/backend-asdf.svg" width="25%">
-  <img src="images/mise.svg" width="25%">
+<div style="display:flex; flex-direction:column; gap:0.9rem; align-items:center;">
+  <div class="fragment semi-fade-out" style="display:flex; justify-content:space-evenly; align-items:center; width:96%;">
+    <img src="images/Apache_Maven_logo.svg" width="16%">
+    <img src="images/Gradle_logo.svg" width="16%">
+    <img src="images/bazel-logo.svg" width="16%">
+  </div>
+  <div style="display:flex; justify-content:space-evenly; align-items:center; width:98%;">
+    <img src="images/jenv.png" width="18%">
+    <img src="images/sdkman-pattern.svg" width="18%">
+    <img src="images/backend-asdf.svg" width="18%">
+    <img src="images/mise.svg" width="18%">
+  </div>
 </div>
 
 Notes:
@@ -354,7 +371,7 @@ mise.jdx.dev
 - supply chain security <!-- .element: class="fragment fade-in-then-semi-out" -->
 - direnv functionality <!-- .element: class="fragment fade-in-then-semi-out" -->
 - task runner <!-- .element: class="fragment fade-in-then-semi-out" -->
-<!-- - performance .element: class="fragment fade-in-then-semi-out" -->
+- performance <!-- .element: class="fragment fade-in-then-semi-out" -->
 - lockfiles <!-- .element: class="fragment fade-in-then-semi-out" -->
 - integration with hk,pitchfork, fnox <!-- .element: class="fragment " -->
 

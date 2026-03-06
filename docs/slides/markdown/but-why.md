@@ -34,24 +34,23 @@ git clone
 ``` -->
 
 Notes:
-- the breadth of knowledge that you have to have right now is breathtaking
-- Just to give you an idea: I was happy that I learnt Java just before generics were introduced - It's been a long time since I was accused of being an intelligent man
-- if you're the progenitor you might not even have thought about how dev #2 should setup their project
+- java generics - It's been a long time since I was accused of being an intelligent man
+- if you created the project you might be the problem - how carefully did you think about dev #2
 - if you've got it up and running, you've now been indoctrinated
-- nevermind setting up all of the prerequisites - one of the places where we really fall short is how apps are run and credentials and settigns are passed to your application
 - How nice would it be to just be able to git clone and run your project - how close can we get to that?
 
 ---
 
-Is this a silver bullet? <br/> <!-- .element: class="fragment semi-fade-out shrink" -->
+Is this a silver bullet? <br/> <!-- .element: class="fragment semi-fade-out shrink" data-fragment-index="0" -->
 
 <figure>
   <blockquote>
     It's an opinionated approach to improved developer experience over time
     </blockquote>
 </figure>
-<!-- .element: class="fragment" -->
+<!-- .element: class="fragment" data-fragment-index="0" -->
 
 Notes:
-- absolutely not. We spend time thinking about architecture - should we do hexagonal ,Clean, layered, Onion or Sliced Onion ?
+- We spend time thinking about architecture
 - but how much time do we spend on developer experience?
+- the intention is to stimulate you to what is possible 

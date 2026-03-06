@@ -177,6 +177,11 @@ Notes:
 
 ![fnox-demo](images/demo-fnox-secrets.gif)
 
+Notes:
+- takes the ideas from direnv extends them
+- moves away from the raw bash file
+- caters for multiple backends
+
 ---
 <!-- .slide: data-auto-animate data-auto-animate-id="fnox-prod" -->
 
