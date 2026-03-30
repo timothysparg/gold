@@ -40,11 +40,13 @@ HK_MISE = true
 
 [hooks]
 postinstall = "hk install --mise"
+enter = { task = "check-system-tools" }
 
 [settings]
 env_cache = true
 env_cache_ttl = "4h"
 experimental = true
+disable_tools = ["docker"]
 
 [plugins]
 fnox-env = "https://github.com/jdx/mise-env-fnox"
