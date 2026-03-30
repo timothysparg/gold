@@ -1,5 +1,5 @@
 [tools]
-hk = { version = "1.36", postinstall = "hk install --mise" }
+hk = { version = "1.36" }
 java = "oracle-graalvm-25.0.1"
 pkl = "0.30.2"
 yamlfmt = "0.21.0"
@@ -37,6 +37,9 @@ run = "hk fix"
 [env]
 _.fnox-env = { tools = true }
 HK_MISE = true
+
+[hooks]
+postinstall = "hk install --mise"
 
 [settings]
 env_cache = true
