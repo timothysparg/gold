@@ -300,9 +300,9 @@ Notes:
 <!-- .slide: class="hooks-code-slide" -->
 
 ### mise.toml
-<pre data-id="mise-config"><code class="language-toml" data-trim data-line-numbers="1-7|2|9-23">
+<pre data-id="mise-config"><code class="language-toml" data-trim data-line-numbers="1-7|28-29|9-23">
 [tools]
-hk = { version = "latest", postinstall = "hk install --mise" }
+hk = { version = "latest"}
 pkl = "latest"
 "pipx:sqlfluff" = "latest"
 uv = "latest"
@@ -327,12 +327,19 @@ run = "./mvnw native:compile -Pnative"
 
 [env]
 HK_MISE = true
+
+[hooks]
+postinstall = "hk install --mise"
+
+[settings]
+experimental = true
+
 </code></pre>
 
 <div class="slide-callout slide-callout--info" data-line-callout="1-7">
   <code>mise</code> installs the entire toolchain for this workflow, not just <code>hk</code> itself
 </div>
-<div class="slide-callout slide-callout--info" data-line-callout="2" hidden>
+<div class="slide-callout slide-callout--info" data-line-callout="28-29" hidden>
   The <code>postinstall</code> hook lets <code>hk</code> register its git hooks as part of tool setup
 </div>
 <div class="slide-callout slide-callout--info" data-line-callout="9-23" hidden>
@@ -344,3 +351,42 @@ Notes:
 - with a mise install, all of our tools are installed for us
 - the tasks aren't strictly necessary, but it makes sense to find a central place to register all your commands
 - this is the weakest part of the integration for me, I wish there was a better way to make sure that local devs actually added the git hooks
+
+---
+<!-- .slide: class="hooks-code-slide" -->
+
+### 🐳
+<pre data-id="mise-config"><code class="language-toml" data-trim data-line-numbers="29-30|25-27">
+[tools]
+hk = { version = "latest" }
+pkl = "latest"
+"pipx:sqlfluff" = "latest"
+uv = "latest"
+yamlfmt = "latest"
+"github:google/google-java-format" = "latest"
+
+[tasks.check]
+description = "hk validation checks"
+run = "hk check"
+
+[tasks.fix]
+description = "Apply hk automatic fixes"
+run = "hk fix"
+
+[tasks.build]
+description = "Build and test the project with Maven"
+run = "./mvnw clean install"
+
+[tasks."build:native"]
+description = "Compile a native executable using the Maven native profile"
+run = "./mvnw native:compile -Pnative"
+
+[hooks]
+enter = { task = "check-system-tools" }
+
+[settings]
+disable_tools = ["docker"]
+
+[env]
+HK_MISE = true
+</code></pre>

@@ -681,7 +681,7 @@ Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ul
 
 
 Notes:
-
+and spoiler for Docker, we can't quite manage it, but we can use mise to give people a heads up
 ---
 <!-- .slide: data-auto-animate data-auto-animate-id="github-actions-ci" -->
 
